@@ -1,7 +1,10 @@
 from flask import Flask
-import os
+from app.routes import routes
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "devkey")
+app.secret_key = "super_secret_key"
 
-from app import routes
+app.register_blueprint(routes)
+
+if __name__ == '__main__':
+    app.run(debug=True)
