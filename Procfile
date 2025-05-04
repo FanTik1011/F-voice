@@ -1,1 +1,1 @@
-web: python F-voice/app.py
+web: python app.py
